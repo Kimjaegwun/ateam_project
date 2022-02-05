@@ -308,10 +308,17 @@ const SelectData = ({
     <div>
       <SelectBoxWrapper>
         <div style={{ marginRight: "8px" }}>
-          <SelectBox onClick={changeSelect("가공방식") as any}>
-            가공방식
+          <SelectBox
+            style={{
+              width: "64px",
+              backgroundColor: method ? "#1565C0" : "#FFFFFF",
+              color: method ? "#FFFFFF" : "#323D45",
+            }}
+            onClick={changeSelect("가공방식") as any}
+          >
+            {method || "가공방식"}
             <Img
-              src="/images/arrow.png"
+              src={method ? "/images/arrow_white.png" : "/images/arrow.png"}
               alt="arrow-img"
               width="10px"
               height="5px"
@@ -344,10 +351,20 @@ const SelectData = ({
         </div>
 
         <div>
-          <SelectBox onClick={changeSelect("재료") as any}>
+          <SelectBox
+            style={{
+              backgroundColor: material.length > 0 ? "#1565C0" : "#FFFFFF",
+              color: material.length > 0 ? "#FFFFFF" : "#323D45",
+            }}
+            onClick={changeSelect("재료") as any}
+          >
             재료{material.length > 0 ? `(${material.length})` : ""}
             <Img
-              src="/images/arrow.png"
+              src={
+                material.length > 0
+                  ? "/images/arrow_white.png"
+                  : "/images/arrow.png"
+              }
               alt="arrow-img"
               width="10px"
               height="5px"
@@ -413,7 +430,6 @@ const SelectData = ({
           uncheckedIcon={false}
           checkedIcon={false}
           boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
-          activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
           height={16}
           width={34}
         />
