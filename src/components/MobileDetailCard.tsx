@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 import { ProtoData } from "../containers/PartnerContainer";
-import { Content, Img } from "../style/styles";
+import { Content } from "../style/styles";
 
 const CardWrapper = styled.div`
   display: flex;
